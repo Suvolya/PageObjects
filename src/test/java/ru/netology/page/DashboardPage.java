@@ -33,7 +33,7 @@ public class DashboardPage {
     private int extractBalance(String text) {
        var start = text.indexOf(balanceStart);
         var finish = text.indexOf(balanceFinish);
-        var value = text.substring(start + balanceStart.length(),  37;
+        var value = text.substring(start + balanceStart.length(), 37);
         return Integer.parseInt(value);
     }
 
