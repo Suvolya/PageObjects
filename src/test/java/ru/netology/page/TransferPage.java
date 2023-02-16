@@ -1,5 +1,6 @@
 package ru.netology.page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.DataHelper;
 
@@ -14,7 +15,7 @@ public class TransferPage {
     private SelenideElement amountInput = $("div[data-test-id=amount] input");
     private SelenideElement fromInput = $("span[data-test-id=from] input");
     private SelenideElement transferButton = $("button[data-test-id=action-transfer]");
-    private SelenideElement errorNotification = $("[data-test-id = error-notification]");
+    private SelenideElement errorNotification = $("[data-test-id=error-notification] .notification__content");
 
     public TransferPage() {
         transferButton.shouldBe(visible);
@@ -31,6 +32,6 @@ public class TransferPage {
     }
 
     public void findErrorNotification(String expectedText) {
-        errorNotification.shouldHave(exactText(expectedText), Duration.ofSeconds(15)).shouldBe(visible);
+        errorNotification.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactText(expectedText));
     }
 }
