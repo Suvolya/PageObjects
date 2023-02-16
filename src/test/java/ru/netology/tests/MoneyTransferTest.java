@@ -81,6 +81,7 @@ class MoneyTransferTest {
         assertEquals(expectedBalanseFirstCard, actualBalanceFirstCard);
         assertEquals(expectedBalanseSecondtCard, actualBalanceSecondCard);
     }
+
 }
 
 
